@@ -1,0 +1,80 @@
+A) CREATE YOUR OWN RESUME DATA IN JSON FORMAT:
+let myResume:[{
+   "detail":{
+        "name":"s.poojasri",
+        "father name":"k.sekar",
+        "mother name":"s.durgadevi",
+        "email id":"poojoo.shree@gmail.com",
+        "phone number":9840549981,
+         "language known":["tamil","english"],
+         "martial status":"single",
+         "address":"no 12 abc 5th street ,xyz ",
+         "pincode":600041,
+         "nationality":"indian",
+         "religion":"hindu",
+         "city":"chennai",
+         "state":"tamilnadu",
+        },
+    "profiles":{
+        [
+        "linkedIn":"https://www.linkedin.com/in/poojasri-sekar-548267300",
+        "naukri":"http://https//www.naukri.com/mnj/fullprofile?primary",
+        "github":"https://github.com/poojasrisekar/task1",
+        ]
+    },
+    "education":{[
+        "graduation":"BCA",
+         "percentage":"72%",
+         "college name":"prof.dhanapalan college of science and management",
+         "university":"university of madras",
+         "year of passing":2024,
+         "12th school name":"shradhha childrens academy",
+         "percentage":"72%",
+         "year of passing":2021,
+         "10th school name":"shraddha childrens academy",
+         "percentage":"50%",
+         "year of passing":2019,
+         
+    ]
+    },
+    "skills":{
+        "name":["java","python","c","c++"],
+        "level":"beginer",
+    },
+    "working level":{
+          "experience":"FRESHER",
+    },
+    "Hobbies":{
+        "name":["drawing","listening music","dancing"],
+    },
+}]; 
+console.log(myResume);
+
+B) FOR THE ABOVE JSON ITERATE OVER ALL FOR LOOPS(for,forin,for of,forEach):
+   //for loop
+     for(var i = 0; i < myResume.length; i++) {
+     var obj = myResume[i];
+    console.log(object.keys());
+}
+
+//for Each
+myResume.forEach(function(obj) 
+{ 
+  console.log(object.keys); 
+});
+
+//for In
+for (var key in myResume) {
+       console.log(myResume(keys));
+       console.log(myResume(values));
+  }
+}
+
+}
+}
+//for Of
+let text = "";
+for (let x of json[key].id) {
+ text += x; 
+}
+ console.log(text);
