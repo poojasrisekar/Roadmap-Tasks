@@ -1,0 +1,102 @@
+1) https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+//base class
+class movie{
+    constructor(title = "", studio = "", rating = "PG") {
+        this.title = title;
+        this.studio = studio;
+        this.rating = rating;
+    }
+    getPG(movies = [movie]) {
+        console.log(movies);
+        var filteredarray = [];
+        movies.forEach((movie) => {
+            if (movie.rating === "PG") {
+                filteredarray.push(movie);
+            }
+        });
+        return filteredarray;
+    }
+}
+const SPD1 = new movie("SPD1","EROS",);
+const SPD2 = new movie("SPD2","EROS");
+const SPD3 = new movie("SPD3", "EROS", "PG13");
+const IRON_MAN=new movie("IR1","EROS","R");
+
+
+2)https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+
+class circle{
+   constructor(radius="",color=""){
+     this.radus=radius; 
+     this.color=color;
+  }
+const semi=new circle("1.0","red"); //giving value to the radius and color..
+
+get area(){
+   return math.PI * math.pow(this.radius,1.0);
+}
+get circumference(){
+   return math.PI / radius * math.pow(this.radius,1.0);
+ }
+}
+console.log(semi.(area));
+console.log(semi.(circumference));
+
+//get radius.. 
+get radius(){
+    return this.radius;
+}
+
+//set radius..
+set radius(){
+   this.radius;
+}
+
+//get color..
+get color(){
+   return this.color;
+}
+
+//set color..
+set color(){
+   this.color;
+}
+
+
+3) Write a “person” class to hold all the details.
+class person{
+  constructor(name="",age="",hobbies="",studied="",city="",state=""){
+      this.name=name;
+      this.age=age;
+      this.hobbies=hobbies;
+      this.studied=studied;
+      this.city=city;
+      this.state=state;
+}
+const girl = new person("pooja",20,"drawing","BCA","chennai","tamilnadu");
+console.log(girl);
+
+
+4) write a class to calculate the Uber price.
+class uber{
+   constructor(kilometers="",priceperkilometers=""){
+      this.kilometers=kilometers;
+      this.priceperkilometers=priceperkilometers;
+}
+const vechile_price = new uber(150,15);
+console.log(vechile_price.(kilometers));
+console.log(vechile_price.(priceperkilometers));
+
+//using get method..
+get vechile_price(){
+   return this.kilometers;
+}
+console.log(vechile_price);
+
+//using get method..
+get vechile_price(){
+   return this.priceperkilometers;
+ }
+console.log(vechile_price);
+
+
