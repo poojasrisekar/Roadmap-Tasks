@@ -1,0 +1,66 @@
+DAY 16 TASK:
+index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback function</title>
+    <style>body{
+        margin: 0;
+        height:100vh;
+        background-color:greenyellow;
+        text-align:center;
+        
+    }
+        </style>
+</head>
+         
+<body>
+    <div id="block">
+        <h1 id="display"></h1>
+    </div>
+    <script src="happy.js"></script>
+
+</body>
+
+</html>
+
+happy.js:
+
+setTimeout(() => {
+   document.getElementById("display").innerText = "10";
+    setTimeout(() => {
+        document.getElementById("display").innerText = "9";
+        setTimeout(() => {
+            document.getElementById("display").innerText = "8";
+            setTimeout(() => {
+                document.getElementById("display").innerText = "7";
+                setTimeout(() => {
+                    document.getElementById("display").innerText = "6";
+                    setTimeout(() => {
+                        document.getElementById("display").innerText = "5";
+                        setTimeout(() => {
+                            document.getElementById("display").innerText = "4";
+                            setTimeout(() => {
+                                document.getElementById("display").innerText = "3";
+                                setTimeout(() => {
+                                    document.getElementById("display").innerText = "2";
+                                    setTimeout(() => {
+                                        document.getElementById("display").innerText = "1";
+                                        setTimeout(() => {
+                                            document.getElementById("display").innerText = "Happy Independence day!";
+                                        }, 1000);
+                                    }, 1000);
+                                }, 1000);
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+}, 1000);
+
+
