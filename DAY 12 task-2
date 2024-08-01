@@ -1,0 +1,107 @@
+pagination :
+
+Page.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <title>Pagination<title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li> <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">6</a></li>
+        <li class="page-item"><a class="page-link" href="#">7</a></li>
+        <li class="page-item"><a class="page-link" href="#">8</a></li>
+        <li class="page-item"><a class="page-link" href="#">9</a></li>
+        <li class="page-item"><a class="page-link" href="#">10</a></li>
+        <li class="page-item"><a class="page-link" href="#">11</a></li>
+        <li class="page-item"><a class="page-link" href="#">12</a></li>
+        <li class="page-item"><a class="page-link" href="#">13</a></li>
+        <li class="page-item"><a class="page-link" href="#">14</a></li>
+        <li class="page-item"><a class="page-link" href="#">15</a></li>
+        <li class="page-item"><a class="page-link" href="#">16</a></li>
+        <li class="page-item"><a class="page-link" href="#">17</a></li>
+        <li class="page-item"><a class="page-link" href="#">18</a></li>
+        <li class="page-item"><a class="page-link" href="#">19</a></li>
+        <li class="page-item"><a class="page-link" href="#">20</a></li>
+
+    </ul>
+</nav>
+
+    <script src='pages.js'></script>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+   </body>
+</html>
+**********************************************************************************************************
+
+Pages.js:
+document.addEventListener('DOMContentLoaded', function () {
+    const content = document.querySelector('.content');
+    const itemsPerPage = 1; // set number of items per page
+    let currentPage = 0;
+    const items = Array.from(content.getElementsByTagName('section')).slice(0); // tag name set to section and slice set to 0
+
+    function showPage(page) {
+        const startIndex = page * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        items.forEach((item, index) => {
+            item.classList.toggle('hidden', index < startIndex || index >= endIndex);
+        });
+        updateActiveButtonStates();
+    }
+
+    function createPageButtons() {
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+        const paginationContainer = document.createElement('div');
+        const paginationDiv = document.body.appendChild(paginationContainer);
+        paginationContainer.classList.add('pagination');
+
+        // Add page buttons
+        for (let i = 0; i < totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i + 1;
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                showPage(currentPage);
+                updateActiveButtonStates();
+            });
+
+            content.appendChild(paginationContainer);
+            paginationDiv.appendChild(pageButton);
+        }
+    }
+
+    function updateActiveButtonStates() {
+        const pageButtons = document.querySelectorAll('.pagination button');
+        pageButtons.forEach((button, index) => {
+            if (index === currentPage) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+
+    createPageButtons(); // Call this function to create the page buttons initially
+    showPage(currentPage);
+});
+
